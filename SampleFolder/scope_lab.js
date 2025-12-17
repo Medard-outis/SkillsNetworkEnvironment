@@ -1,58 +1,72 @@
 
-
-let userRole ="usere";
+//scope_lab.js
+// Variables declaration
+// User roles can be 'employee', 'Enrolled Member', 'subscriber', and 'non-subscriber'
+let userRole ="kuku";
 let accessLevel;
-// 
-let isLoggedIn = false;
-let userMessage;
-
-let userType = "usere";
-let userCategory;
-
+let isLoggedIn = true;
 let isAuthenticated = false;
+let userMessage;
+let userType = "subscriber";
+let userCategory;
+let interractionType;
 
-let authenticationStatus = isAuthenticated ? 
-    document.getElementById("status").innerHTML="Authenticated" : 
-    document.getElementById("status").innerHTML="Not authenticated";
+// Control flow based on user role and login status
 
-if (userRole === "admin") {
-    accessLevel = document.getElementById("access").innerHTML="Full access granted";
-} else if (userRole === "manager") {
-    accessLevel = document.getElementById("access").innerHTML= "Limited access granted";
-} else {
-    accessLevel = document.getElementById("access").innerHTML= "No access granted";
-}
-
-console.log("Access Level:", accessLevel);
 
 
 if (isLoggedIn) {
-    if (userRole === "admin") {
-        userMessage = document.getElementById("welcome").innerHTML= `welcome, ${userRole}!`;
+    // Outer condition to check user role
+    if (userRole === "employee" && userType === "employee") {
+        accessLevel = document.getElementById("access").innerHTML="Full access granted";
+    } else if (userRole === "Enrolled Member" && userType === "Enrolled Member") {
+        accessLevel = document.getElementById("access").innerHTML= "Full access granted";
+    } else if (userRole === "subscriber" && userType === "subscriber") {
+        accessLevel = document.getElementById("access").innerHTML= "Partial access granted";
+    }else {
+        accessLevel = document.getElementById("access").innerHTML= "No access granted";
+    }
+
+// Nested condition to further specify user type
+    if (userRole === "employee" || userRole === "Enrolled Member" || userRole === "subscriber") {
+            switch (userType) {
+            case "employee":
+                userCategory = document.getElementById("category").innerHTML= "Employee";
+                document.getElementById("interraction").innerHTML="In-person and online services available";
+                var authenticationStatus = isAuthenticated ?"Authenticated":"Not authenticated";
+                userMessage = document.getElementById("welcome").innerHTML= `welcome, ${userRole}!`;
+                break;
+            case "Enrolled Member":
+                userCategory =document.getElementById("category").innerHTML="Enrolled Member";
+                document.getElementById("interraction").innerHTML="services available";
+                userMessage = document.getElementById("welcome").innerHTML= `welcome, ${userRole}!`;
+                var authenticationStatus = isAuthenticated ?"Authenticated":"Not authenticated";
+                break;
+            case "subscriber":
+                userCategory = document.getElementById("category").innerHTML= "Subscriber";
+                document.getElementById("interraction").innerHTML="partiel services available";
+                userMessage = document.getElementById("welcome").innerHTML= `welcome, ${userRole}!`;
+                var authenticationStatus = isAuthenticated ?"Authenticated":"Not authenticated";
+                break;
+            default:
+                userCategory = document.getElementById("category").innerHTML= "Unknown";
+                document.getElementById("interraction").innerHTML="No services available";
+                userMessage = document.getElementById("welcome").innerHTML= "welcome, Guest!";
+                var authenticationStatus = isAuthenticated ?"Authenticated":"Not authenticated";
+}
+
+
+       
     } else {
-        userMessage = document.getElementById("welcome").innerHTML= `welcome, ${userRole}!`;
+        userMessage = document.getElementById("welcome").innerHTML= "Please Subscribe.";
+        var authenticationStatus = isAuthenticated ?"Authenticated":"Not authenticated";
     }
 } else {
     userMessage = document.getElementById("welcome").innerHTML= "Please log in to access the system.";
+    var authenticationStatus = isAuthenticated ?"Authenticated":"Not authenticated";
 }
 
-console.log("User Message:", userMessage);
-
-switch (userType) {
-    case "admin":
-        userCategory = document.getElementById("category").innerHTML= "Administrator";
-        break;
-    case "manager":
-        userCategory =document.getElementById("category").innerHTML="Manager";
-        break;
-    case "subscriber":
-        userCategory = document.getElementById("category").innerHTML= "Subscriber";
-        break;
-    default:
-        userCategory = document.getElementById("category").innerHTML= "Unknown";
-}
-
-console.log("User Category:", userCategory);
 
 
-console.log("Authentication Status:", authenticationStatus);
+
+document.getElementById("status").innerHTML= authenticationStatus
