@@ -1,22 +1,26 @@
-let userRole = "admin";
+
+
+let userRole ="usere";
 let accessLevel;
 // 
-let isLoggedIn = true;
+let isLoggedIn = false;
 let userMessage;
 
-let userType = "subscriber";
+let userType = "usere";
 let userCategory;
 
-let isAuthenticated = true;
+let isAuthenticated = false;
 
-let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
+let authenticationStatus = isAuthenticated ? 
+    document.getElementById("status").innerHTML="Authenticated" : 
+    document.getElementById("status").innerHTML="Not authenticated";
 
 if (userRole === "admin") {
-    accessLevel = "Full access granted";
+    accessLevel = document.getElementById("access").innerHTML="Full access granted";
 } else if (userRole === "manager") {
-    accessLevel = "Limited access granted";
+    accessLevel = document.getElementById("access").innerHTML= "Limited access granted";
 } else {
-    accessLevel = "No access granted";
+    accessLevel = document.getElementById("access").innerHTML= "No access granted";
 }
 
 console.log("Access Level:", accessLevel);
@@ -24,28 +28,28 @@ console.log("Access Level:", accessLevel);
 
 if (isLoggedIn) {
     if (userRole === "admin") {
-        userMessage = "Welcome, Admin!";
+        userMessage = document.getElementById("welcome").innerHTML= `welcome, ${userRole}!`;
     } else {
-        userMessage = "Welcome, User!";
+        userMessage = document.getElementById("welcome").innerHTML= `welcome, ${userRole}!`;
     }
 } else {
-    userMessage = "Please log in to access the system.";
+    userMessage = document.getElementById("welcome").innerHTML= "Please log in to access the system.";
 }
 
 console.log("User Message:", userMessage);
 
 switch (userType) {
     case "admin":
-        userCategory = "Administrator";
+        userCategory = document.getElementById("category").innerHTML= "Administrator";
         break;
     case "manager":
-        userCategory = "Manager";
+        userCategory =document.getElementById("category").innerHTML="Manager";
         break;
     case "subscriber":
-        userCategory = "Subscriber";
+        userCategory = document.getElementById("category").innerHTML= "Subscriber";
         break;
     default:
-        userCategory = "Unknown";
+        userCategory = document.getElementById("category").innerHTML= "Unknown";
 }
 
 console.log("User Category:", userCategory);
