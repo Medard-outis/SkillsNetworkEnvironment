@@ -16,6 +16,7 @@ body{
 }
 
 .contenaire {
+    padding: 30px 40px;
     border: 2px solid white;
     width: 40%;
     min-width: 450px;
@@ -23,4 +24,11 @@ body{
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%; 
+}
+
+#newTask{
+    background-color: #ffff;
+    padding: 30px 20px;
+    border-radius: 5px;
+    box-shadow:  15px 30px rgba(0, 0, 0, 0,3);
 }
