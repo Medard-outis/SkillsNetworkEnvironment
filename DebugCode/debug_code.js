@@ -16,7 +16,7 @@ function performOperation() {
     }
 }
 
-
+//==================================================================================
 function multiply(a, b) {
 // Introduce a debugger statement to pause execution
     debugger;
