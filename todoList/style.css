@@ -15,7 +15,7 @@ body{
     );
 }
 
-.contenaire {
+.container {
     padding: 30px 40px;
     border: 2px solid white;
     width: 40%;
@@ -26,7 +26,7 @@ body{
     left: 50%; 
 }
 
-#newTask{
+#newtask{
     position: relative;
     background-color: #ffff;
     padding: 30px 20px;
@@ -34,7 +34,7 @@ body{
     box-shadow: 0  15px 30px rgba(0, 0, 0, 0.3);
 }
 
-#newTask input{
+#newtask input{
     
     width: 70%;
 
@@ -49,7 +49,7 @@ body{
     border-radius: 5px;
 }
 
-#newTask input:focus{
+#newtask input:focus{
     outline: none;
     border-color: #8052ec ;
 }
@@ -76,4 +76,31 @@ body{
     box-shadow:0 15px  30px rgba(0, 0, 0, 0.3);
     width: 100%;
     position: relative;
+}
+.task{
+    background-color: #ffff;
+    height: 50px;
+    padding: 5px 10px;
+    margin-top:10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #d1d3d4;
+
+}
+.task span{
+    font-family: 'popins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.task button{
+    background-color: #8052ec;
+    color: white;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
