@@ -27,8 +27,53 @@ body{
 }
 
 #newTask{
+    position: relative;
     background-color: #ffff;
     padding: 30px 20px;
     border-radius: 5px;
-    box-shadow:  15px 30px rgba(0, 0, 0, 0,3);
+    box-shadow: 0  15px 30px rgba(0, 0, 0, 0.3);
+}
+
+#newTask input{
+    
+    width: 70%;
+
+    height: 45px;
+    font-family: 'poppins', sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+    padding: 12px;
+    color: #000000ee;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+}
+
+#newTask input:focus{
+    outline: none;
+    border-color: #8052ec ;
+}
+
+#newTask button{
+    position: relative;
+    float: right;
+    width: 20%;
+    height: 45px;
+    border-radius: 5%;
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+    background-color: #8052ec;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#tasks{
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow:0 15px  30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: relative;
 }
