@@ -33,4 +33,7 @@ document.querySelector('#push').onclick = function(){
         } 
     }
 
+    // clear the input field after adding a task
+    document.querySelector('#newtask input').value = "";
+
 }
