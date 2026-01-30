@@ -1,5 +1,5 @@
 document.querySelector('#push').onclick = function(){
-    if (document.querySelector('#newtask input').Value.length == 0){
+    if (document.querySelector('#newtask input').value.length == 0){
         alert("please Enter a task !")
     }
 
