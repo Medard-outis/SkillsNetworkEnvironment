@@ -104,3 +104,8 @@ body{
     cursor: pointer;
     outline: none;
 }
+
+.completed{
+    text-decoration: line-through;
+    color: #8052ec;
+}
