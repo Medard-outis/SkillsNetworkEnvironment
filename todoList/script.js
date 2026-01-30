@@ -10,12 +10,27 @@ document.querySelector('#push').onclick = function(){
             <span id="taskname">
                 ${document.querySelector('#newtask input').value}
             </span>
-            
-            <button class="delete">
+            <!-- font awesome icon for trash -->
+             <button class="delete">
                 <i class="fas fa-trash"></i>
             </button>
         </div>
         `
+    }
+
+    var current_tasks = document.querySelectorAll(".delete");
+    for (var i=0; i<current_tasks.length; i++){
+        current_tasks[i].onclick = function(){
+            this.parentNode.remove();
+        }
+
+    }
+
+    var tasks = document.querySelectorAll(".task");
+    for (var i=0; i<tasks.length; i++){
+        tasks[i].onclick = function(){
+            this.classList.toggle('completed');
+        } 
     }
 
 }
