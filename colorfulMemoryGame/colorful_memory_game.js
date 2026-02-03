@@ -31,10 +31,17 @@ score: This variable tracks the player's score throughout the game.
 The score gets incremented whenever the player matches a pair of cards successfully.
  It's updated and displayed to reflect the player's progress and performance.
 
-timeLeft: It represents the time remaining for the player to complete the game. Initially set to a specific duration, it counts down as the game progresses. When it reaches zero, the game ends.
+timeLeft: It represents the time remaining for the player 
+to complete the game. Initially set to a specific duration, 
+it counts down as the game progresses. When it reaches zero, the game ends.
 
-gameInterval: This variable manages the game timer. It's utilized to control the countdown mechanism for the game's duration. The interval continuously decrements the 'timeLeft' variable, updating the displayed time and triggering the game's end when the time expires.
-
-
-
+gameInterval: This variable manages the game timer. 
+It's utilized to control the countdown mechanism for 
+the game's duration. The interval continuously decrements the 'timeLeft' variable,
+ updating the displayed time and triggering the game's end when the time expires.
 */
+
+const startbtn = document.getElementById('startbtn');
+const gameContainer = document.getElementById('game-container');
+const scoreElement = document.getElementById('score');
+const timerElement = document.getElementById('timer');
