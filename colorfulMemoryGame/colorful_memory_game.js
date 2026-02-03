@@ -18,9 +18,14 @@ These colors create pairs for the game.
 cards array: Initialized by shuffling and attaching 
 the 'colors' array, this 'cards' array holds the color 
 values for the cards in the game. The shuffle function employs 
-the Fisher-Yates algorithm to randomize the order of the colors and then duplicates these colors to create pairs, forming the set of cards for gameplay.
+the Fisher-Yates algorithm to randomize the order of the colors 
+and then duplicates these colors to create pairs, 
+forming the set of cards for gameplay.
 
-selectedCards: This variable acts as a temporary storage for the currently selected cards during the game. When a player clicks on a card, it gets added to this array to enable match comparisons.
+selectedCards: This variable acts as a temporary storage 
+for the currently selected cards during the game. 
+When a player clicks on a card, it gets added to this array 
+to enable match comparisons.
 
 score: This variable tracks the player's score throughout the game. The score gets incremented whenever the player matches a pair of cards successfully. It's updated and displayed to reflect the player's progress and performance.
 
