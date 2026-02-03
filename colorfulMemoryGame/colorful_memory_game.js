@@ -116,10 +116,29 @@ function handleCardClick(event) {
     if (!card.classList.contains('card') || card.classList.contains('matched')) {
         return;
     }
-            card.textContent = card.dataset.color;
-            card.style.backgroundColor = card.dataset.color;
-            selectedCards.push(card);
-            if (selectedCards.length === 2) {
-                setTimeout(checkMatch, 500);
-            }
+    card.textContent = card.dataset.color;
+    card.style.backgroundColor = card.dataset.color;
+    selectedCards.push(card);
+    if (selectedCards.length === 2) {
+        setTimeout(checkMatch, 500);
+    }
 }
+/*
+Event Target using const card = event.target;: This line retrieves the element that triggered the event (in this case, a clicked card) and assigns it to the 'card' variable.
+
+Checking the card: if (!card.classList.contains('card') || card.classList.contains('matched')) { return; } This 'if' statement checks whether the clicked element is a card and if it's already matched. If either condition is true:
+
+If the element is not a card or has already matched, the function returns early, ignoring any further actions for this particular click.
+Revealing the card:
+
+card.textContent = card.dataset.color;: It sets the text content of the clicked card to the value stored in its 'dataset.color'. This action reveals the card's color by changing the text content to the color value.
+
+card.style.backgroundColor = card.dataset.color;: Changes the card's background color to match the revealed color.
+
+Handling selected cards:
+
+selectedCards.push(card);: Adds the clicked card to the 'selectedCards' array, indicating that it's one of the cards currently chosen by the player.
+Checking for matches:
+
+if (selectedCards.length === 2) { setTimeout(checkMatch, 500); }: Checks if two cards have been selected. If two cards have been chosen, it uses 'setTimeout()' to delay the execution of the 'checkMatch()' function by 500 milliseconds. This brief delay allows the player to see both selected cards before their comparison briefly. */
+
