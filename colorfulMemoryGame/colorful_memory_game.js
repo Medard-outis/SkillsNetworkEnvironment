@@ -45,3 +45,36 @@ const startbtn = document.getElementById('startbtn');
 const gameContainer = document.getElementById('game-container');
 const scoreElement = document.getElementById('score');
 const timerElement = document.getElementById('timer');
+
+ function generateCards() {
+    for (const color of cards) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.dataset.color = color;
+        card.textContent = '?';
+        gameContainer.appendChild(card);
+    }
+}
+
+/*
+It utilizes a 'for…of' loop to iterate over each element (color) in the 'cards' array.
+For each color in the 'cards' array:
+
+Inside the loop, it creates a new HTML div element using document.createElement('div'). 
+This 'div' element represents a card in the game.
+
+It adds a class 'card' to the newly created 'div' 
+element using card.classList.add('card'). This class might c
+ontain CSS styles or rules to style the card elements.
+
+It sets the 'dataset.color' attribute of the card 
+element to the current color value from the 'cards' array. 
+This icon represents the card's hidden color until the player clicks it.
+
+The text content of each card is initially 
+set to a question mark ('?') using the card.textContent = '?'. 
+This represents that the color of the card is hidden until it's clicked by the player.
+
+Finally, the newly created card element is attached to 
+the 'gameContainer' element as a child. This action adds 
+each card element to the game interface within the designated container. */
