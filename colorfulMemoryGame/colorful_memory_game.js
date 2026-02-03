@@ -78,3 +78,48 @@ This represents that the color of the card is hidden until it's clicked by the p
 Finally, the newly created card element is attached to 
 the 'gameContainer' element as a child. This action adds 
 each card element to the game interface within the designated container. */
+
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+/*
+Array parameter: It takes an array as an argument, 
+which contains yet to be shuffled elements.
+
+Shuffling process using loop through the array: 
+The function starts by initiating a 'for' loop that iterates backward 
+through the array starting from the last index (let i = array.length - 1; i > 0; i–).
+
+Random index selection: Within each iteration, 
+it generates a random index 'j' using Math.floor(Math.random() * (i + 1)). 
+This 'j' represents a random index within the array.
+
+Swapping elements: It then swaps the elements at the 'i' and 'j' 
+indices using array destructuring assignment: [array[i], array[j]] = [array[j], array[i]]. 
+This line efficiently swaps the values at 
+positions 'i' and 'j' without requiring a temporary variable.
+
+Continuing the loop: The loop continues until it finishes iterating 
+through the entire array, shuffling elements along the way.
+
+Returning the shuffled array: Once the loop is complete, 
+the function returns the array with its elements rearranged into a random order. */
+
+function handleCardClick(event) {
+    const card = event.target;
+    if (!card.classList.contains('card') || card.classList.contains('matched')) {
+        return;
+    }
+            card.textContent = card.dataset.color;
+            card.style.backgroundColor = card.dataset.color;
+            selectedCards.push(card);
+            if (selectedCards.length === 2) {
+                setTimeout(checkMatch, 500);
+            }
+}
