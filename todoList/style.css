@@ -68,7 +68,7 @@ body{
     cursor: pointer;
 }
 
-#tasks{
+#tasks {
     background-color: #ffffff;
     padding: 30px 20px;
     margin-top: 60px;
@@ -109,4 +109,23 @@ body{
 .completed{
     text-decoration: line-through;
     color: #8052ec;
+}
+.btn{
+    border: 1px solid red;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn button{
+    margin: 10px;
+    width: 25%;
+    height: 45px;
+    border-radius: 5%;
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+    background-color: #8052ec;
+    border: none;
+    color: white;
+    cursor: pointer;
 }

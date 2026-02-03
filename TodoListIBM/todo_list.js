@@ -6,6 +6,7 @@ const clearCompletedBtn = document.getElementById("clearCompletedBtn");
 // Array to hold tasks
 let tasks = [];
 
+
 // Function to add a new task
 function addTask() {
     const taskText = taskInput.value.trim();
@@ -15,6 +16,8 @@ function addTask() {
         displayTasks();
     }
 }
+
+
 
 // Function to display tasks
 function displayTasks() {
