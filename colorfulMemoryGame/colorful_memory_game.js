@@ -27,7 +27,9 @@ for the currently selected cards during the game.
 When a player clicks on a card, it gets added to this array 
 to enable match comparisons.
 
-score: This variable tracks the player's score throughout the game. The score gets incremented whenever the player matches a pair of cards successfully. It's updated and displayed to reflect the player's progress and performance.
+score: This variable tracks the player's score throughout the game. 
+The score gets incremented whenever the player matches a pair of cards successfully.
+ It's updated and displayed to reflect the player's progress and performance.
 
 timeLeft: It represents the time remaining for the player to complete the game. Initially set to a specific duration, it counts down as the game progresses. When it reaches zero, the game ends.
 
