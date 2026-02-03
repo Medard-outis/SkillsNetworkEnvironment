@@ -9,3 +9,25 @@ let selectedCards = [];
 let score = 0;
 let timeLeft = 30;
 let gameInterval;
+/*  
+colors array: This array holds distinct color 
+values in strings, representing the colors for 
+the cards in the memory match game. 
+These colors create pairs for the game.
+
+cards array: Initialized by shuffling and attaching 
+the 'colors' array, this 'cards' array holds the color 
+values for the cards in the game. The shuffle function employs 
+the Fisher-Yates algorithm to randomize the order of the colors and then duplicates these colors to create pairs, forming the set of cards for gameplay.
+
+selectedCards: This variable acts as a temporary storage for the currently selected cards during the game. When a player clicks on a card, it gets added to this array to enable match comparisons.
+
+score: This variable tracks the player's score throughout the game. The score gets incremented whenever the player matches a pair of cards successfully. It's updated and displayed to reflect the player's progress and performance.
+
+timeLeft: It represents the time remaining for the player to complete the game. Initially set to a specific duration, it counts down as the game progresses. When it reaches zero, the game ends.
+
+gameInterval: This variable manages the game timer. It's utilized to control the countdown mechanism for the game's duration. The interval continuously decrements the 'timeLeft' variable, updating the displayed time and triggering the game's end when the time expires.
+
+
+
+*/
