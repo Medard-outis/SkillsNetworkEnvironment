@@ -142,3 +142,69 @@ Checking for matches:
 
 if (selectedCards.length === 2) { setTimeout(checkMatch, 500); }: Checks if two cards have been selected. If two cards have been chosen, it uses 'setTimeout()' to delay the execution of the 'checkMatch()' function by 500 milliseconds. This brief delay allows the player to see both selected cards before their comparison briefly. */
 
+function checkMatch() {
+    const [card1, card2] = selectedCards;
+    if (card1.dataset.color === card2.dataset.color) {
+    card1.classList.add('matched');
+    card2.classList.add('matched');
+    score += 2;
+    scoreElement.textContent = `Score: ${score}`;
+    } else {
+    card1.textContent = '?';
+    card2.textContent = '?';
+    card1.style.backgroundColor = '#ddd';
+    card2.style.backgroundColor = '#ddd';
+    }
+    selectedCards = [];
+}
+
+/*
+Destructuring selected cards:
+
+const [card1, card2] = selectedCards;: This line uses array destructuring to assign the first two elements of the 'selectedCards' array to 'card1' and 'card2'. These variables represent the two cards selected by the player for comparison.
+Comparing card colors:
+
+if (card1.dataset.color === card2.dataset.color) { ... }: This checks if the color value stored in the 'dataset.color' attribute of 'card1' matches the color value of 'card2'.
+
+If the colors match: It adds the class 'matched' to both cards using 'classList.add('matched')', marking them as matched pairs in the game.
+
+Increases the 'score' by 2 points, as the player successfully matched a pair.
+
+Updates the 'scoreElement.textContent' to display the updated score to the player.
+
+Handling non-matching cards: If the colors of the two selected cards don't match, it resets the text content of both cards to a question mark ('?'), hiding their colors again.
+
+Sets the background color of both cards to a default color ('#ddd'), providing a visual cue that the selected cards didn't match.
+Resetting selection:
+
+selectedCards = [];: It clears the 'selectedCards' array to reset it for the next set of card selections. This action ensures the player can select two new cards after the comparison.
+
+*/
+
+function startGame() {
+            let timeLeft = 30;
+            startbtn.disabled = true;
+            score = 0; // Reset score to zero
+            scoreElement.textContent = `Score: ${score}`;
+            startGameTimer(timeLeft);
+            cards = shuffle(colors.concat(colors));
+            selectedCards = [];
+            gameContainer.innerHTML = '';
+            generateCards();
+            gameContainer.addEventListener('click', handleCardClick);
+        }
+
+function startGameTimer(timeLeft) {
+            timerElement.textContent = `Time Left: ${timeLeft}`;
+            gameInterval = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = `Time Left: ${timeLeft}`;
+
+                if (timeLeft === 0) {
+                    clearInterval(gameInterval);
+                    let timeLeft = 30;
+                    alert('Game Over!');
+                    startbtn.disabled = false;
+                }
+            }, 1000);
+        }
