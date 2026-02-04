@@ -7,13 +7,20 @@ const clearCompletedBtn = document.getElementById("clearCompletedBtn");
 let tasks = [];
 
 
+
+
+
 // Function to add a new task
 function addTask() {
     const taskText = taskInput.value.trim();
+    // Only add task if input is not empty
     if (taskText !== "") {
         tasks.push({ text: taskText});
         taskInput.value = "";
         displayTasks();
+    }
+    else{
+        alert("Please enter a task.");
     }
 }
 
