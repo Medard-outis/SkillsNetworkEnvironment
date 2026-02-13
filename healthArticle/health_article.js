@@ -16,3 +16,19 @@ True: Indicates if the request is asynchronous (true) or synchronous (false).
 
  // response type specification
  xhr.responseType ='json';
+
+
+
+ xhr.onload = function(){
+    var articles = xhr.response.articles;
+    var articlesDiv = document.getElementById('articles');
+ }
+
+ /*
+ var articles = xhr.response.articles; 
+ to retrieve the articles array from the JSON response.
+
+var articlesDiv = document.getElementById('articles'); 
+to retrieve the HTML element with the ID 'articles' 
+where the fetched content will be displayed.
+ */
