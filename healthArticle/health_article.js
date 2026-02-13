@@ -77,3 +77,6 @@ articles.forEach(function(article) {
 
     articlesDiv.appendChild(articleDiv);
   });
+
+  // Sending the request
+  xhr.send();
