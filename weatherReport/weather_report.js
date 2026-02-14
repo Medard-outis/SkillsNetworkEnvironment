@@ -3,9 +3,10 @@ function showweatherDetails(event) {
 }
 //5403c5980858e92612b4f0f9e5d4e3d3
 const city = document.getElementById('city').value;
-const apiKey = 'c4f86ece00bc8aa272652ac9065af12d'; // Replace 'YOUR_API_KEY' with your actual API key
+const apiKey = '5403c5980858e92612b4f0f9e5d4e3d3'; // Replace 'YOUR_API_KEY' with your actual API key
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
+// old : c4f86ece00bc8aa272652ac9065af12d
 
 fetch(apiUrl)
 .then(response => response.json())
@@ -16,3 +17,4 @@ fetch(apiUrl)
                           <p>Weather: ${data.weather[0].description}</p>`;
 })
 
+document.getElementById('weatherForm').addEventListener('submit',showweatherDetails );
